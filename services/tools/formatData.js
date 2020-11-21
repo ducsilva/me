@@ -6,7 +6,7 @@ const serializeUserData = userData => ({
   name: userData.name,
   description: userData.bio,
   avatarUrl: userData.avatar_url,
-  profileUrl: userData.url,
+  profileUrl: userData.html_url,
   publicReposCount: userData.public_repos,
   followersCount: userData.followers,
   createdAt: userData.created_at,
