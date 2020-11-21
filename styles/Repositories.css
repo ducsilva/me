@@ -1,0 +1,101 @@
+#repositories {
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5em;
+}
+
+#repositories .repositories-title {
+  text-align: center;
+  font-size: 1.75em;
+}
+
+#repositories .repositories-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#repositories .repository-card {
+  width: 100%;
+  height: 100%;
+  margin-top: 1em;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#repositories .repository-card .repository-title {
+  font-size: 1.2em;
+}
+
+#repositories .repository-card .repository-description {
+  margin-top: 0.8em;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+#repositories .repository-card .repository-extra-info {
+  margin-top: 0.8em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
+}
+
+#repositories .repository-card .repository-updated-info {
+  width: 100%;
+  text-align: end;
+  margin-top: 0.8em;
+}
+
+@media (min-width: 768px) {
+  #repositories {
+    margin-top: 3.5em;
+  }
+
+  #repositories .repositories-container {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+
+  #repositories .repository-card {
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 15px;
+  }
+
+  #repositories .repository-card .repository-title {
+    font-size: 1.2em;
+  }
+
+  #repositories .repository-card .repository-description {
+    margin-top: 0.8em;
+    text-align: justify;
+  }
+
+  #repositories .repository-card .repository-extra-info {
+    margin-top: 0.8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 5px;
+    grid-column-gap: 10px;
+  }
+
+  #repositories .repository-card .repository-updated-info {
+    width: 100%;
+    text-align: end;
+    margin-top: 0.8em;
+  }
+}
