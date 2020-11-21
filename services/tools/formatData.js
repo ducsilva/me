@@ -19,8 +19,11 @@ const serializeRepositories = repositiores =>
     name: repo.name,
     description: repo.description,
     language: repo.language,
+    repoUrl: repo.html_url,
+    starsCount: repo.stargazers_count,
+    watchersCount: repo.watchers_count,
+    forksCount: repo.forks_count,
     updatedAt: repo.updated_at,
-    repoUrl: repo.svn_url,
     updatedDistance: dateService.dateDistance(repo.updated_at),
   }));
 
