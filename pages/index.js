@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Header from './_header';
 import Profile from './_profile';
+import Repositories from './_repositories';
 
 import githubApiService from '../services/resources/githubApi';
 
@@ -50,7 +51,7 @@ export default function Home() {
             profileUrl={user.profileUrl}
             createdDistance={user.createdDistance}
           />
-          {console.log({ user, repositories })}
+          <Repositories repositories={repositories} />
         </div>
       )}
     </div>
