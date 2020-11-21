@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="page">
       <Head>
-        <title>Github Projects by Lucas Vieira</title>
+        <title>Github Profiles by Lucas Vieira</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -27,7 +27,7 @@ const Header = () => {
       <div className="wrapper">
         <a className="navbar-logo" href="/">
           <img src="/logo.svg" alt="Logo" />
-          <h1 className="navbar-logo-title">Github Projects</h1>
+          <h1 className="navbar-logo-title">Github Profiles</h1>
         </a>
 
         <ul className="navbar-links">
