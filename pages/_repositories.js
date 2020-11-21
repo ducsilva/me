@@ -1,6 +1,5 @@
 const Repositories = ({ repositories }) => (
   <section id="repositories">
-    {console.log(repositories[0])}
     <div className="wrapper">
       <h1 className="repositories-title">Repositories</h1>
 
