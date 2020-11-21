@@ -22,6 +22,7 @@
 #navbar .navbar-logo {
   display: flex;
   align-items: center;
+  color: white;
 
   transition: opacity 0.25s ease-in-out;
 }
@@ -35,6 +36,7 @@
 }
 
 #navbar .navbar-logo-title {
+  display: none;
   margin-left: 10px;
 }
 
@@ -54,4 +56,10 @@
 
 #navbar .navbar-links a:hover {
   opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  #navbar .navbar-logo-title {
+    display: initial;
+  }
 }
