@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Header from './_header';
 import Profile from './_profile';
 import Repositories from './_repositories';
+import Footer from './_footer';
 
 import githubApiService from '../services/resources/githubApi';
 
@@ -52,6 +53,7 @@ export default function Home() {
             createdDistance={user.createdDistance}
           />
           <Repositories repositories={repositories} />
+          <Footer />
         </div>
       )}
     </div>
