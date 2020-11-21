@@ -1,0 +1,10 @@
+#footer {
+  margin-top: 2em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #footer {
+    margin-top: 4em;
+  }
+}
