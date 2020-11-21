@@ -48,14 +48,7 @@
 #navbar .navbar-links a {
   display: block;
   padding: 5px 10px;
-  color: #e01b5c;
   font-weight: bold;
-
-  transition: opacity 0.25s ease-in-out;
-}
-
-#navbar .navbar-links a:hover {
-  opacity: 0.8;
 }
 
 @media (min-width: 768px) {
