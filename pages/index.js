@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 import Header from './_header';
@@ -8,27 +7,7 @@ import Footer from './_footer';
 
 import githubApiService from '../services/resources/githubApi';
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({});
-  const [repositories, setRepositories] = useState([]);
-
-  const fetchUserData = async () =>
-    await githubApiService.fetchUserData('Lukazovic');
-
-  const fetchUserRepositories = async () =>
-    await githubApiService.fetchRepositories('Lukazovic');
-
-  useEffect(() => {
-    Promise.all([fetchUserData(), fetchUserRepositories()]).then(
-      ([userData, userRepositories]) => {
-        setUser(userData);
-        setRepositories(userRepositories);
-        setLoading(false);
-      }
-    );
-  }, []);
-
+function Home({ user, repositories }) {
   return (
     <div className="page">
       <Head>
@@ -37,25 +16,37 @@ export default function Home() {
       </Head>
 
       <Header />
-
-      {loading ? (
-        <h1>Loading</h1>
-      ) : (
-        <div>
-          <Profile
-            name={user.name}
-            userName={user.userName}
-            description={user.description}
-            avatarUrl={user.avatarUrl}
-            followersCount={user.followersCount}
-            publicReposCount={user.publicReposCount}
-            profileUrl={user.profileUrl}
-            createdDistance={user.createdDistance}
-          />
-          <Repositories repositories={repositories} />
-          <Footer />
-        </div>
-      )}
+      <Profile
+        name={user.name}
+        userName={user.userName}
+        description={user.description}
+        avatarUrl={user.avatarUrl}
+        followersCount={user.followersCount}
+        publicReposCount={user.publicReposCount}
+        profileUrl={user.profileUrl}
+        createdDistance={user.createdDistance}
+      />
+      <Repositories repositories={repositories} />
+      <Footer />
     </div>
   );
 }
+
+export default Home;
+
+export const getStaticProps = async () => {
+  const DEFAULT_USER_NAME = 'Lukazovic';
+
+  const user = await githubApiService.fetchUserData(DEFAULT_USER_NAME);
+  const repositories = await githubApiService.fetchRepositories(
+    DEFAULT_USER_NAME
+  );
+
+  return {
+    props: {
+      user,
+      repositories,
+    },
+    revalidate: 60,
+  };
+};
