@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const Header = () => {
@@ -32,13 +33,25 @@ const Header = () => {
 
         <ul className="navbar-links">
           <li>
-            <a href="#">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/vieira-lucas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </li>
           <li>
-            <a href="#">Github</a>
+            <a
+              href="https://github.com/Lukazovic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
           </li>
           <li>
-            <a href="#">Create Profile</a>
+            <Link href="/search">Create Profile</Link>
           </li>
         </ul>
       </div>
