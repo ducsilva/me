@@ -1,11 +1,11 @@
-const Repositories = ({ repositories }) => (
+const Repositories = ({ repositories = [] }) => (
   <section id="repositories">
     <div className="wrapper">
       <h1 className="repositories-title">Repositories</h1>
 
       <div className="repositories-container">
         {repositories.map(repository => (
-          <div className="repository-card">
+          <div className="repository-card" key={repository.id}>
             <div className="repository-card-top">
               <a
                 className="repository-title"
