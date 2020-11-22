@@ -13,12 +13,18 @@
   margin: 0 auto;
 }
 
-#profile .profile-container img {
-  margin-top: 15vh;
+#profile .profile-image-container {
+  margin: 15vh auto 0;
   width: 300px;
   height: 300px;
+}
+
+#profile .profile-image-container img {
   border-radius: 50%;
-  border: 5px solid #e01b5c;
+  border: 5px solid #e01b5c !important;
+  height: 300px !important;
+  width: 300px !important;
+  margin: 0 !important;
 }
 
 #profile .profile-container h1 {

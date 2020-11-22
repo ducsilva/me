@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Profile = ({
   name,
   userName,
@@ -11,7 +13,9 @@ const Profile = ({
   <main id="profile">
     <div className="wrapper">
       <div className="profile-container default-container ">
-        <img src={avatarUrl} alt={name} />
+        <div className="profile-image-container">
+          <Image src={avatarUrl} alt={name} width={300} height={300} />
+        </div>
         <h1>{name}</h1>
         <h4>{description}</h4>
 
