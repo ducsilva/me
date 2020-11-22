@@ -1,0 +1,140 @@
+#profile-loading {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#profile-loading .profile-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#profile-loading .profile-loading-border-image {
+  margin-top: 15vh;
+  width: 305px;
+  height: 305px;
+  border-radius: 50%;
+  background-color: #e01b5c;
+
+  position: relative;
+}
+
+#profile-loading .profile-loading-image-container {
+  position: absolute;
+  width: 305px;
+  height: 305px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile-loading .profile-loading-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -90deg,
+    #858585 0%,
+    #f8f8f8 50%,
+    #858585 100%
+  );
+
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+#profile-loading .profile-loading-name {
+  margin: 0.5em auto 0;
+  width: 210px;
+  height: 42px;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -90deg,
+    #858585 0%,
+    #f8f8f8 50%,
+    #858585 100%
+  );
+
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+#profile-loading .profile-loading-description {
+  margin-top: 0.25em;
+  height: 20px;
+  width: 270px;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -90deg,
+    #858585 0%,
+    #f8f8f8 50%,
+    #858585 100%
+  );
+
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+#profile-loading .profile-loading-info-card {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-loading .profile-loading-info-card-item {
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -90deg,
+    #858585 0%,
+    #f8f8f8 50%,
+    #858585 100%
+  );
+  margin: 2px auto 0;
+  width: 270px;
+  height: 20px;
+
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+#profile-loading .profile-loading-github-link {
+  margin: 0.5em auto 0;
+  width: 160px;
+  height: 20px;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -90deg,
+    #e01b5c 0%,
+    #e45685 50%,
+    #e01b5c 100%
+  );
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
+
+@media (min-width: 768px) {
+  #profile-loading .profile-loading-border-image {
+    margin-top: 10vh;
+  }
+
+  #profile-loading .profile-loading-info-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+  }
+
+  #profile-loading .profile-loading-info-card-item {
+    width: 100%;
+  }
+}
