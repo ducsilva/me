@@ -26,10 +26,12 @@ const Header = () => {
       }`}
     >
       <div className="wrapper">
-        <a className="navbar-logo" href="/">
-          <img src="/logo.svg" alt="Logo" />
-          <h1 className="navbar-logo-title">Github Profiles</h1>
-        </a>
+        <Link href="/">
+          <div className="navbar-logo">
+            <img src="/logo.svg" alt="Logo" />
+            <h1 className="navbar-logo-title">Github Profiles</h1>
+          </div>
+        </Link>
 
         <ul className="navbar-links">
           <li>
