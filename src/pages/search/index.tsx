@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Header from '../_header';
+import Header from '../../components/Header';
 
-function Search() {
+const Search: React.FC = () => {
   const [userName, setUsername] = useState('');
   const router = useRouter();
 
@@ -61,7 +61,7 @@ function Search() {
       </main>
     </div>
   );
-}
+};
 
 export default Search;
 

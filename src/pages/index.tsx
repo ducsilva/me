@@ -1,3 +1,5 @@
+import React from 'react';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import Header from '../components/Header';
@@ -7,7 +9,15 @@ import Footer from '../components/Footer';
 
 import githubApiService from '../services/resources/githubApi';
 
-function Home({ user, repositories }) {
+import User from '../helpers/interfaces/User';
+import Repository from '../helpers/interfaces/Repository';
+
+interface HomeProps {
+  repositories: Array<Repository>;
+  user: User;
+}
+
+const Home: React.FC<HomeProps> = ({ user, repositories }) => {
   return (
     <div className="page">
       <Head>
@@ -30,11 +40,11 @@ function Home({ user, repositories }) {
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const DEFAULT_USER_NAME = 'Lukazovic';
 
   const user = await githubApiService.fetchUserData(DEFAULT_USER_NAME);

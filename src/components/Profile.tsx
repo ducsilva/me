@@ -1,6 +1,18 @@
+import React from 'react';
 import Image from 'next/image';
 
-const Profile = ({
+interface ProfileProps {
+  name: string;
+  userName: string;
+  description: string;
+  avatarUrl: string;
+  followersCount: number;
+  publicReposCount: number;
+  profileUrl: string;
+  createdDistance: string;
+}
+
+const Profile: React.FC<ProfileProps> = ({
   name,
   userName,
   description,

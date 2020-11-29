@@ -1,15 +1,25 @@
+import React from 'react';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import Header from '../_header';
-import Profile from '../_profile';
-import ProfileLoading from '../_profileLoading';
-import Repositories from '../_repositories';
-import Footer from '../_footer';
+import Header from '../../components/Header';
+import Profile from '../../components/Profile';
+import ProfileLoading from '../../components/ProfileLoading';
+import Repositories from '../../components/Repositories';
+import Footer from '../../components/Footer';
 
 import githubApiService from '../../services/resources/githubApi';
 
-function UserProfile({ user, repositories }) {
+import User from '../../helpers/interfaces/User';
+import Repository from '../../helpers/interfaces/Repository';
+
+interface UserProfileProps {
+  repositories: Array<Repository>;
+  user: User;
+}
+
+const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
   const { isFallback } = useRouter();
 
   if (isFallback) {
@@ -48,18 +58,24 @@ function UserProfile({ user, repositories }) {
       <Footer />
     </div>
   );
-}
+};
 
 export default UserProfile;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: true,
   };
 };
 
-export const getStaticProps = async context => {
+interface Context {
+  params: {
+    userName: string;
+  };
+}
+
+export const getStaticProps: GetStaticProps = async (context: Context) => {
   const { userName } = context.params;
 
   const user = await githubApiService.fetchUserData(userName);

@@ -1,4 +1,23 @@
-const Repositories = ({ repositories = [] }) => (
+import React from 'react';
+
+interface Repository {
+  id: string;
+  name: string;
+  description: string;
+  language: string;
+  repoUrl: string;
+  starsCount: number;
+  watchersCount: number;
+  forksCount: number;
+  updatedAt: string;
+  updatedDistance: string;
+}
+
+interface RepositoriesProps {
+  repositories: Array<Repository>;
+}
+
+const Repositories: React.FC<RepositoriesProps> = ({ repositories = [] }) => (
   <section id="repositories">
     <div className="wrapper">
       <h1 className="repositories-title">Repositories</h1>

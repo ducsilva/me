@@ -1,6 +1,11 @@
 import dateService from './date';
 
-const serializeUserData = userData => ({
+import User from '../../helpers/interfaces/User';
+import Repository from '../../helpers/interfaces/Repository';
+import ApiUser from '../../helpers/interfaces/ApiUser';
+import ApiRepository from '../../helpers/interfaces/ApiRepository';
+
+const serializeUserData = (userData: ApiUser): User => ({
   id: userData.id,
   userName: userData.login,
   name: userData.name,
@@ -13,7 +18,9 @@ const serializeUserData = userData => ({
   createdDistance: dateService.dateDistance(userData.created_at),
 });
 
-const serializeRepositories = repositiores =>
+const serializeRepositories = (
+  repositiores: Array<ApiRepository>
+): Array<Repository> =>
   repositiores.map(repo => ({
     id: repo.id,
     name: repo.name,
