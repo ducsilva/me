@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -61,14 +62,20 @@ const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
 
 export default UserProfile;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: true,
   };
 };
 
-export const getStaticProps = async context => {
+interface Context {
+  params: {
+    userName: string;
+  };
+}
+
+export const getStaticProps: GetStaticProps = async (context: Context) => {
   const { userName } = context.params;
 
   const user = await githubApiService.fetchUserData(userName);

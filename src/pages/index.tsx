@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import Header from '../components/Header';
@@ -43,7 +44,7 @@ const Home: React.FC<HomeProps> = ({ user, repositories }) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const DEFAULT_USER_NAME = 'Lukazovic';
 
   const user = await githubApiService.fetchUserData(DEFAULT_USER_NAME);
