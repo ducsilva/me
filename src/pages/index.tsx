@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 
 import Header from '../components/Header';
@@ -7,7 +8,38 @@ import Footer from '../components/Footer';
 
 import githubApiService from '../services/resources/githubApi';
 
-function Home({ user, repositories }) {
+interface User {
+  id: string;
+  userName: string;
+  name: string;
+  description: string;
+  avatarUrl: string;
+  profileUrl: string;
+  publicReposCount: number;
+  followersCount: number;
+  createdAt: string;
+  createdDistance: string;
+}
+
+interface Repository {
+  id: string;
+  name: string;
+  description: string;
+  language: string;
+  repoUrl: string;
+  starsCount: number;
+  watchersCount: number;
+  forksCount: number;
+  updatedAt: string;
+  updatedDistance: string;
+}
+
+interface HomeProps {
+  repositories: Array<Repository>;
+  user: User;
+}
+
+const Home: React.FC<HomeProps> = ({ user, repositories }) => {
   return (
     <div className="page">
       <Head>
@@ -30,7 +62,7 @@ function Home({ user, repositories }) {
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;
 
