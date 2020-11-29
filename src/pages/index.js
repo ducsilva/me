@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
-import Header from './_header';
-import Profile from './_profile';
-import Repositories from './_repositories';
-import Footer from './_footer';
+import Header from '../components/Header';
+import Profile from '../components/Profile';
+import Repositories from '../components/Repositories';
+import Footer from '../components/Footer';
 
 import githubApiService from '../services/resources/githubApi';
 
