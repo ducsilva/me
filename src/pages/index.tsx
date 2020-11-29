@@ -8,31 +8,8 @@ import Footer from '../components/Footer';
 
 import githubApiService from '../services/resources/githubApi';
 
-interface User {
-  id: string;
-  userName: string;
-  name: string;
-  description: string;
-  avatarUrl: string;
-  profileUrl: string;
-  publicReposCount: number;
-  followersCount: number;
-  createdAt: string;
-  createdDistance: string;
-}
-
-interface Repository {
-  id: string;
-  name: string;
-  description: string;
-  language: string;
-  repoUrl: string;
-  starsCount: number;
-  watchersCount: number;
-  forksCount: number;
-  updatedAt: string;
-  updatedDistance: string;
-}
+import User from '../helpers/interfaces/User';
+import Repository from '../helpers/interfaces/Repository';
 
 interface HomeProps {
   repositories: Array<Repository>;
