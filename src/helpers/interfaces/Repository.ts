@@ -1,4 +1,4 @@
-interface Repository {
+export interface IUserRepository {
   id: string;
   name: string;
   description: string;
@@ -11,4 +11,14 @@ interface Repository {
   updatedDistance: string;
 }
 
-export default Repository;
+export interface IApiUserRepository {
+  id: string;
+  name: string;
+  description: string;
+  language: string;
+  html_url: string;
+  stargazers_count: number;
+  watchers_count: number;
+  forks_count: number;
+  updated_at: string;
+}

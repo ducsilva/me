@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -9,13 +9,13 @@ const Search: React.FC = () => {
   const [userName, setUsername] = useState('');
   const router = useRouter();
 
-  const handleSubmit = evt => {
-    evt.preventDefault();
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
     router.push(`/profile/${userName}`);
   };
 
-  const handleInputChange = evt => {
-    setUsername(evt.target.value);
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value);
   };
 
   return (

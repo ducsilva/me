@@ -9,15 +9,15 @@ import Footer from '../components/Footer';
 
 import githubApiService from '../services/resources/githubApi';
 
-import User from '../helpers/interfaces/User';
-import Repository from '../helpers/interfaces/Repository';
+import { IUser } from '../helpers/interfaces/User';
+import { IUserRepository } from '../helpers/interfaces/Repository';
 
-interface HomeProps {
-  repositories: Array<Repository>;
-  user: User;
+interface IProps {
+  repositories: IUserRepository[];
+  user: IUser;
 }
 
-const Home: React.FC<HomeProps> = ({ user, repositories }) => {
+const Home: React.FC<IProps> = ({ user, repositories }) => {
   return (
     <div className="page">
       <Head>

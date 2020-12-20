@@ -11,12 +11,12 @@ import Footer from '../../components/Footer';
 
 import githubApiService from '../../services/resources/githubApi';
 
-import User from '../../helpers/interfaces/User';
-import Repository from '../../helpers/interfaces/Repository';
+import { IUser } from '../../helpers/interfaces/User';
+import { IUserRepository } from '../../helpers/interfaces/Repository';
 
 interface UserProfileProps {
-  repositories: Array<Repository>;
-  user: User;
+  repositories: IUserRepository[];
+  user: IUser;
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
