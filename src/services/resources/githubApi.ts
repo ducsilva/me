@@ -1,19 +1,22 @@
 import axios from 'axios';
 import formatDataService from '../tools/formatData';
 
-import ApiUser from '../../helpers/interfaces/ApiUser';
-import ApiRepository from '../../helpers/interfaces/ApiRepository';
+import { IApiUser } from '../../helpers/interfaces/User';
+import {
+  IUserRepository,
+  IApiUserRepository,
+} from '../../helpers/interfaces/Repository';
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com/',
 });
 
 interface UserApiResponse {
-  data: ApiUser;
+  data: IApiUser;
 }
 
 interface RepositoriesApiResponse {
-  data: Array<ApiRepository>;
+  data: IApiUserRepository[];
 }
 
 const fetchUserData = async (userName: string) => {
@@ -21,7 +24,9 @@ const fetchUserData = async (userName: string) => {
   return formatDataService.serializeUserData(response.data);
 };
 
-const fetchRepositories = async (userName: string) => {
+const fetchRepositories = async (
+  userName: string
+): Promise<IUserRepository[]> => {
   const response: RepositoriesApiResponse = await githubApi.get(
     `users/${userName}/repos`
   );

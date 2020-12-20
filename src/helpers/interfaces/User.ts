@@ -1,4 +1,4 @@
-interface User {
+export interface IUser {
   id: string;
   userName: string;
   name: string;
@@ -11,4 +11,14 @@ interface User {
   createdDistance: string;
 }
 
-export default User;
+export interface IApiUser {
+  id: string;
+  login: string;
+  name: string;
+  bio: string;
+  avatar_url: string;
+  html_url: string;
+  public_repos: number;
+  followers: number;
+  created_at: string;
+}

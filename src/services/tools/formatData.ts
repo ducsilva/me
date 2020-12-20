@@ -1,11 +1,12 @@
 import dateService from './date';
 
-import User from '../../helpers/interfaces/User';
-import Repository from '../../helpers/interfaces/Repository';
-import ApiUser from '../../helpers/interfaces/ApiUser';
-import ApiRepository from '../../helpers/interfaces/ApiRepository';
+import { IUser, IApiUser } from '../../helpers/interfaces/User';
+import {
+  IUserRepository,
+  IApiUserRepository,
+} from '../../helpers/interfaces/Repository';
 
-const serializeUserData = (userData: ApiUser): User => ({
+const serializeUserData = (userData: IApiUser): IUser => ({
   id: userData.id,
   userName: userData.login,
   name: userData.name,
@@ -19,8 +20,8 @@ const serializeUserData = (userData: ApiUser): User => ({
 });
 
 const serializeRepositories = (
-  repositiores: Array<ApiRepository>
-): Array<Repository> =>
+  repositiores: IApiUserRepository[]
+): IUserRepository[] =>
   repositiores.map(repo => ({
     id: repo.id,
     name: repo.name,
