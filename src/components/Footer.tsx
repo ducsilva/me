@@ -3,22 +3,21 @@ import React from 'react';
 const Footer: React.FC = () => (
   <footer id="footer">
     <div className="wrapper">
-      <p>
-        To see this project's code click{' '}
-        <a
-          href="https://github.com/Lukazovic/github-profiles-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          here
-        </a>
-      </p>
+      <a
+        href="https://github.com/Lukazovic/github-profiles-next-app"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Link to Project's source code on Github"
+      >
+        Project's source code
+      </a>
       <p>
         Made by{' '}
         <a
           href="https://www.linkedin.com/in/vieira-lucas/"
           target="_blank"
           rel="noopener noreferrer"
+          title="Lucas Vieira LinkedIn Profile"
         >
           Lucas Vieira
         </a>

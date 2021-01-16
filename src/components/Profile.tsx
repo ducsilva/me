@@ -46,7 +46,12 @@ const Profile: React.FC<ProfileProps> = ({
           </li>
         </ul>
 
-        <a href={profileUrl} target="_blank" rel="noopener noreferrer">
+        <a
+          href={profileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`${userName} Github Profile`}
+        >
           See more on Github
         </a>
       </div>

@@ -31,6 +31,7 @@ const Repositories: React.FC<RepositoriesProps> = ({ repositories = [] }) => (
                 href={repository.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`${repository.name} source code on Github`}
               >
                 {repository.name}
               </a>
