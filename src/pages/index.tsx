@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
+
+import Head from '../components/Head';
 
 import Header from '../components/Header';
 import Profile from '../components/Profile';
@@ -20,10 +21,7 @@ interface IProps {
 const Home: React.FC<IProps> = ({ user, repositories }) => {
   return (
     <div className="page">
-      <Head>
-        <title>Github Profiles by Lucas Vieira</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head />
 
       <Header />
       <Profile
