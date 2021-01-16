@@ -1,8 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import Head from '../../components/Head';
 import Header from '../../components/Header';
 
 const Search: React.FC = () => {
@@ -20,10 +19,7 @@ const Search: React.FC = () => {
 
   return (
     <div className="page">
-      <Head>
-        <title>Create your Github Profile</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head />
 
       <Header />
 

@@ -27,35 +27,41 @@ const Header: React.FC = () => {
     >
       <div className="wrapper">
         <Link href="/">
-          <div className="navbar-logo">
+          <a className="navbar-logo" title="Home page">
             <img src="/logo.svg" alt="Logo" />
             <h1 className="navbar-logo-title">Github Profiles</h1>
-          </div>
+          </a>
         </Link>
 
-        <ul className="navbar-links">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/vieira-lucas/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Lukazovic"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </a>
-          </li>
-          <li>
-            <Link href="/search">Create Profile</Link>
-          </li>
-        </ul>
+        <nav>
+          <ul className="navbar-links">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/vieira-lucas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit my LinkedIn Profile"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Lukazovic"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit my Github Profile"
+              >
+                Github
+              </a>
+            </li>
+            <li>
+              <Link href="/search">
+                <a title="Create your own Profile">Create Profile</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

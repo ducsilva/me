@@ -21,12 +21,7 @@ Router.events.on('routeChangeError', () => {
 });
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <link rel="stylesheet" href="/nprogress.css" type="text/css" />
-      <Component {...pageProps} />;
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

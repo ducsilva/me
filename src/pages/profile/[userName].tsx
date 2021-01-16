@@ -1,8 +1,8 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 
+import Head from '../../components/Head';
 import Header from '../../components/Header';
 import Profile from '../../components/Profile';
 import ProfileLoading from '../../components/ProfileLoading';
@@ -25,11 +25,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
   if (isFallback) {
     return (
       <div className="page">
-        <Head>
-          <title>Github Profiles by Lucas Vieira</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
+        <Head />
         <Header />
         <ProfileLoading />
       </div>
@@ -38,10 +34,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
 
   return (
     <div className="page">
-      <Head>
-        <title>Github Profiles by Lucas Vieira</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head title={`${user.name} - Profile`} description={user.description} />
 
       <Header />
       <Profile
