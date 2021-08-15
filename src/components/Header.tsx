@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const Header: React.FC = () => {
+const Header = () => {
   const [navbarPositionFixed, setNavbarPositionFixed] = useState(false);
 
-  const scrollEvent = () => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY === 0) {
-        setNavbarPositionFixed(false);
-      } else if (!navbarPositionFixed) {
-        setNavbarPositionFixed(true);
-      }
-    });
+  const handleNavbarPosition = () => {
+    if (window.scrollY === 0) {
+      setNavbarPositionFixed(false);
+    } else if (!navbarPositionFixed) {
+      setNavbarPositionFixed(true);
+    }
   };
 
   useEffect(() => {
-    scrollEvent();
+    window.addEventListener('scroll', handleNavbarPosition);
+
+    return () => {
+      window.removeEventListener('scroll', handleNavbarPosition);
+    };
   }, []);
 
   return (

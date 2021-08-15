@@ -1,54 +1,22 @@
-import React from 'react';
 import { GetStaticProps } from 'next';
 
-import Head from '../components/Head';
+import ProfileTemplate, { ProfileTemplateProps } from '../templates/Profile';
 
-import Header from '../components/Header';
-import Profile from '../components/Profile';
-import Repositories from '../components/Repositories';
-import Footer from '../components/Footer';
+import UserResources from '../services/resources/user';
+import RepositoryResources from '../services/resources/repository';
 
-import githubApiService from '../services/resources/githubApi';
+const DEFAULT_USER_NAME = 'Lukazovic';
 
-import { IUser } from '../helpers/interfaces/User';
-import { IUserRepository } from '../helpers/interfaces/Repository';
+const HomePage = ({ user, repositories }: ProfileTemplateProps) => (
+  <ProfileTemplate user={user} repositories={repositories} />
+);
 
-interface IProps {
-  repositories: IUserRepository[];
-  user: IUser;
-}
-
-const Home: React.FC<IProps> = ({ user, repositories }) => {
-  return (
-    <div className="page">
-      <Head />
-
-      <Header />
-      <Profile
-        name={user.name}
-        userName={user.userName}
-        description={user.description}
-        avatarUrl={user.avatarUrl}
-        followersCount={user.followersCount}
-        publicReposCount={user.publicReposCount}
-        profileUrl={user.profileUrl}
-        createdDistance={user.createdDistance}
-      />
-      <Repositories repositories={repositories} />
-      <Footer />
-    </div>
-  );
-};
-
-export default Home;
+export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const DEFAULT_USER_NAME = 'Lukazovic';
-
-  const user = await githubApiService.fetchUserData(DEFAULT_USER_NAME);
-  const repositories = await githubApiService.fetchRepositories(
-    DEFAULT_USER_NAME
-  );
+  const { data: user } = await UserResources.getUserData(DEFAULT_USER_NAME);
+  const { data: repositories } =
+    await RepositoryResources.getAllRepositoriesFromUser(DEFAULT_USER_NAME);
 
   return {
     props: {

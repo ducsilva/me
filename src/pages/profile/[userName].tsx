@@ -1,59 +1,31 @@
-import React from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 
+import ProfileTemplate, { ProfileTemplateProps } from '../../templates/Profile';
+import ProfileLoadingTemplate from '../../templates/ProfileLoading';
+
 import Head from '../../components/Head';
-import Header from '../../components/Header';
-import Profile from '../../components/Profile';
-import ProfileLoading from '../../components/ProfileLoading';
-import Repositories from '../../components/Repositories';
-import Footer from '../../components/Footer';
 
-import githubApiService from '../../services/resources/githubApi';
+import UserResources from '../../services/resources/user';
+import RepositoryResources from '../../services/resources/repository';
 
-import { IUser } from '../../helpers/interfaces/User';
-import { IUserRepository } from '../../helpers/interfaces/Repository';
-
-interface UserProfileProps {
-  repositories: IUserRepository[];
-  user: IUser;
-}
-
-const UserProfile: React.FC<UserProfileProps> = ({ user, repositories }) => {
+const UserProfilePage = ({ user, repositories }: ProfileTemplateProps) => {
   const { isFallback } = useRouter();
 
   if (isFallback) {
-    return (
-      <div className="page">
-        <Head />
-        <Header />
-        <ProfileLoading />
-      </div>
-    );
+    return <ProfileLoadingTemplate />;
   }
 
   return (
-    <div className="page">
+    <>
       <Head title={`${user.name} - Profile`} description={user.description} />
 
-      <Header />
-      <Profile
-        name={user.name}
-        userName={user.userName}
-        description={user.description}
-        avatarUrl={user.avatarUrl}
-        followersCount={user.followersCount}
-        publicReposCount={user.publicReposCount}
-        profileUrl={user.profileUrl}
-        createdDistance={user.createdDistance}
-      />
-      <Repositories repositories={repositories} />
-      <Footer />
-    </div>
+      <ProfileTemplate user={user} repositories={repositories} />
+    </>
   );
 };
 
-export default UserProfile;
+export default UserProfilePage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -62,17 +34,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-interface Context {
-  params: {
-    userName: string;
-  };
-}
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
+) => {
+  const userName = context.params.userName as string;
 
-export const getStaticProps: GetStaticProps = async (context: Context) => {
-  const { userName } = context.params;
+  const { data: user, error: userError } = await UserResources.getUserData(
+    userName
+  );
+  const { data: repositories, error: repositoriesErros } =
+    await RepositoryResources.getAllRepositoriesFromUser(userName);
 
-  const user = await githubApiService.fetchUserData(userName);
-  const repositories = await githubApiService.fetchRepositories(userName);
+  if (userError || repositoriesErros) {
+    return {
+      redirect: { destination: '/404' },
+      props: {},
+    };
+  }
 
   return {
     props: {

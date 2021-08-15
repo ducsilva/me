@@ -1,0 +1,63 @@
+:root {
+  --color-primary: #e01b5c;
+  --color-primary-lighter: #e01b5c;
+  --color-primary-darken: #d80a4e;
+
+  --color-background: #181818;
+  --color-text: #ffffff;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+::-moz-selection {
+  background: var(--color-primary-darken);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--color-primary-darken);
+  text-shadow: none;
+  color: var(--color-white);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.25s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.default-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
