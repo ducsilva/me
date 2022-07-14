@@ -1,10 +1,8 @@
-import BaseTemplate from './Base';
-
-import Profile from '../components/Profile';
-import Repositories from '../components/Repositories';
-import Footer from '../components/Footer';
-
-import { UserData, RepositoryData } from '../services/tools/mappers';
+import Footer from "@Components/Footer";
+import Profile from "@Components/Profile";
+import Repositories from "@Components/Repositories";
+import { RepositoryData, UserData } from "@Services/tools/mappers";
+import BaseTemplate from "@Templates/Base";
 
 export type ProfileTemplateProps = {
   user: UserData;

@@ -1,4 +1,4 @@
-import { RepositoryData } from '../services/tools/mappers';
+import { RepositoryData } from "@Services/tools/mappers";
 
 type RepositoriesProps = {
   repositories: RepositoryData[];
@@ -10,7 +10,7 @@ const Repositories = ({ repositories }: RepositoriesProps) => (
       <h1 className="repositories-title">Repositories</h1>
 
       <div className="repositories-container">
-        {repositories?.map(repository => (
+        {repositories?.map((repository) => (
           <div className="repository-card" key={repository.id}>
             <div className="repository-card-top">
               <a

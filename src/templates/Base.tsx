@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from "@Components/Header";
 
 type BaseTemplateProps = {
   children: React.ReactNode;

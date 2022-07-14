@@ -1,5 +1,5 @@
-import GithubApiTools from '../tools/githubApi';
-import MapperTools from '../tools/mappers';
+import GithubApiTools from "@Services/tools/githubApi";
+import MapperTools from "@Services/tools/mappers";
 
 export type RepositoryApiData = {
   id: string;

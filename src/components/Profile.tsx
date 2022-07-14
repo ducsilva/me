@@ -1,8 +1,7 @@
-import Image from 'next/image';
+import { UserData } from "@Services/tools/mappers";
+import Image from "next/image";
 
-import { UserData } from '../services/tools/mappers';
-
-type ProfileProps = Omit<UserData, 'id' | 'createdAt'>;
+type ProfileProps = Omit<UserData, "id" | "createdAt">;
 
 const Profile = ({
   name,

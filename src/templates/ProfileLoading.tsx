@@ -1,7 +1,6 @@
-import BaseTemplate from './Base';
-
-import Footer from '../components/Footer';
-import ProfileLoading from '../components/ProfileLoading';
+import Footer from "@Components/Footer";
+import ProfileLoading from "@Components/ProfileLoading";
+import BaseTemplate from "@Templates/Base";
 
 const ProfileLoadingTemplate = () => (
   <BaseTemplate>
