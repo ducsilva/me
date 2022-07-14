@@ -2,11 +2,10 @@ import RepositoryResources from "@Services/resources/repository";
 import UserResources from "@Services/resources/user";
 import { fetchAboutDetail } from "@States/user/userSlice";
 import ProfileTemplate, { ProfileTemplateProps } from "@Templates/Profile";
+import { DEFAULT_USER_NAME } from "@Utils/utils";
 import { GetStaticProps } from "next";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-
-const DEFAULT_USER_NAME = "DucSilva";
 
 const HomePage = ({ user, repositories }: ProfileTemplateProps) => {
   const dispatch = useDispatch();
@@ -20,13 +19,9 @@ const HomePage = ({ user, repositories }: ProfileTemplateProps) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data: user } = await UserResources.getUserData(
-    process.env.NEXT_PUBLIC_DEFAULT_USER_NAME
-  );
+  const { data: user } = await UserResources.getUserData(DEFAULT_USER_NAME);
   const { data: repositories } =
-    await RepositoryResources.getAllRepositoriesFromUser(
-      process.env.NEXT_PUBLIC_DEFAULT_USER_NAME
-    );
+    await RepositoryResources.getAllRepositoriesFromUser(DEFAULT_USER_NAME);
 
   return {
     props: {
