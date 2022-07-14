@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useDarkMode from "use-dark-mode";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
+  const darkMode = useDarkMode();
+
   const [navbarPositionFixed, setNavbarPositionFixed] = useState(false);
 
   const handleNavbarPosition = () => {
@@ -61,6 +65,9 @@ const Header = () => {
               <Link href="/search">
                 <a title="Create your own Profile">Create Profile</a>
               </Link>
+            </li>
+            <li>
+              <DarkModeToggle />
             </li>
           </ul>
         </nav>

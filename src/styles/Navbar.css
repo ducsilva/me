@@ -39,11 +39,13 @@
 #navbar .navbar-logo-title {
   display: none;
   margin-left: 10px;
+  color: var(--color-primary);
 }
 
 #navbar .navbar-links {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 #navbar .navbar-links a {
