@@ -1,11 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { useRouter } from 'next/router';
-
-import Head from '../components/Head';
-import Header from '../components/Header';
+import Head from "@Components/Head";
+import Header from "@Components/Header";
+import { useRouter } from "next/router";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const SearchPage = () => {
-  const [userName, setUsername] = useState('');
+  const [userName, setUsername] = useState("");
   const router = useRouter();
 
   const handleSubmit = (event: FormEvent) => {

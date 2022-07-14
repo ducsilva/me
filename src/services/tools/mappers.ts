@@ -1,7 +1,6 @@
-import DateTools from './date';
-
-import { UserApiData } from '../resources/user';
-import { RepositoryApiData } from '../resources/repository';
+import { RepositoryApiData } from "@Services/resources/repository";
+import { UserApiData } from "@Services/resources/user";
+import DateTools from "@Services/tools/date";
 
 export type UserData = {
   id: string;
@@ -45,7 +44,7 @@ export type RepositoryData = {
 const repositoriesMapper = (
   repositories: RepositoryApiData[]
 ): RepositoryData[] =>
-  repositories.map(repo => ({
+  repositories.map((repo) => ({
     id: repo.id,
     name: repo.name,
     description: repo.description,

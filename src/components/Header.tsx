@@ -1,7 +1,7 @@
+import DarkModeToggle from "@Components/DarkModeToggle";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useDarkMode from "use-dark-mode";
-import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   const darkMode = useDarkMode();

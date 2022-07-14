@@ -1,13 +1,10 @@
-import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
-import { useRouter } from 'next/router';
-
-import ProfileTemplate, { ProfileTemplateProps } from '../../templates/Profile';
-import ProfileLoadingTemplate from '../../templates/ProfileLoading';
-
-import Head from '../../components/Head';
-
-import UserResources from '../../services/resources/user';
-import RepositoryResources from '../../services/resources/repository';
+import Head from "@Components/Head";
+import RepositoryResources from "@Services/resources/repository";
+import UserResources from "@Services/resources/user";
+import ProfileTemplate, { ProfileTemplateProps } from "@Templates/Profile";
+import ProfileLoadingTemplate from "@Templates/ProfileLoading";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { useRouter } from "next/router";
 
 const UserProfilePage = ({ user, repositories }: ProfileTemplateProps) => {
   const { isFallback } = useRouter();
@@ -47,7 +44,7 @@ export const getStaticProps: GetStaticProps = async (
 
   if (userError || repositoriesErros) {
     return {
-      redirect: { destination: '/404' },
+      redirect: { destination: "/404" },
       props: {},
     };
   }

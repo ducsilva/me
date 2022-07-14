@@ -1,19 +1,17 @@
-import NProgress from 'nprogress';
-import { Router } from 'next/router';
+import Head from "@Components/Head";
+import "@Styles/styles.scss";
+import { Router } from "next/router";
+import NProgress from "nprogress";
 
-import Head from '../components/Head';
-
-import '../styles/styles.css';
-
-Router.events.on('routeChangeStart', () => {
+Router.events.on("routeChangeStart", () => {
   NProgress.start();
 });
 
-Router.events.on('routeChangeComplete', () => {
+Router.events.on("routeChangeComplete", () => {
   NProgress.done();
 });
 
-Router.events.on('routeChangeError', () => {
+Router.events.on("routeChangeError", () => {
   NProgress.done();
 });
 

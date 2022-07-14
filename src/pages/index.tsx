@@ -1,7 +1,7 @@
+import RepositoryResources from "@Services/resources/repository";
+import UserResources from "@Services/resources/user";
+import ProfileTemplate, { ProfileTemplateProps } from "@Templates/Profile";
 import { GetStaticProps } from "next";
-import RepositoryResources from "../services/resources/repository";
-import UserResources from "../services/resources/user";
-import ProfileTemplate, { ProfileTemplateProps } from "../templates/Profile";
 
 const DEFAULT_USER_NAME = "DucSilva";
 
