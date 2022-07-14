@@ -49,7 +49,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="https://github.com/Lukazovic"
+                href="https://github.com/DucSilva"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Visit my Github Profile"

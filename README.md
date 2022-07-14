@@ -37,7 +37,7 @@ You can use the App in this site: https://github-profiles-next-app.vercel.app/
 
 #### Locally
 
-- Clone the project: `git clone https://github.com/Lukazovic/github-profiles-next-app.git`;
+- Clone the project: `git clone https://github.com/DucSilva/me.git`;
 - Go to the project folder: `cd github-profiles-next-app`;
 - Download the dependencies: `yarn`;
 - Start the application: `yarn dev`.
@@ -57,6 +57,6 @@ Then merge your pull request, you can now delete your branch
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Lukazovic"><img src="https://avatars0.githubusercontent.com/u/54550926?s=460&u=cdeeac652ce0597a986fbdcff6e249ad27a1f1da&v=4" width="100px;" alt=""/><br /><sub><b>Lucas Vieira</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/DucSilva"><img src="https://avatars0.githubusercontent.com/u/54550926?s=460&u=cdeeac652ce0597a986fbdcff6e249ad27a1f1da&v=4" width="100px;" alt=""/><br /><sub><b>Lucas Vieira</b></sub></a><br /></td>
   <tr>
 </table>
