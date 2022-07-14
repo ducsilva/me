@@ -7,7 +7,7 @@ type HeadProps = {
 };
 
 const Head = ({
-  title = "Github Profiles DucSilva",
+  title = "Đức Nguyễn",
   description = "In this project you can create your own Github Profile Page with the main informations and share it with your friends or put it on your resumè.",
   faviconUrl = "/favicon.ico",
 }: HeadProps) => (

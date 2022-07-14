@@ -52,14 +52,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a
-                href="https://github.com/DucSilva"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Visit my Github Profile"
-              >
-                Github
-              </a>
+              <Link href="/github">Github</Link>
             </li>
             <li>
               <Link href="/search">

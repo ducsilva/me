@@ -23,4 +23,9 @@ module.exports = {
       "avatars5.githubusercontent.com",
     ],
   },
+  env: {
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+    NEXT_PUBLIC_TOKEN: process.env.NEXT_PUBLIC_TOKEN,
+    NEXT_PUBLIC_DEFAULT_USER_NAME: process.env.NEXT_PUBLIC_DEFAULT_USER_NAME,
+  },
 };

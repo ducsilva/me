@@ -7,6 +7,7 @@
       "@Services/*": ["./src/services/*"],
       "@Styles/*": ["./src/styles/*"],
       "@Templates/*": ["./src/templates/*"],
+      "@States/*": ["./src/states/*"],
     },
     "target": "es5",
     "lib": [
