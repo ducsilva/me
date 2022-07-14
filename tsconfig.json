@@ -8,6 +8,7 @@
       "@Styles/*": ["./src/styles/*"],
       "@Templates/*": ["./src/templates/*"],
       "@States/*": ["./src/states/*"],
+      "@Utils/*": ["./src/utils/*"],
     },
     "target": "es5",
     "lib": [
