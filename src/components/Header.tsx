@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [navbarPositionFixed, setNavbarPositionFixed] = useState(false);
@@ -13,10 +13,10 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleNavbarPosition);
+    window.addEventListener("scroll", handleNavbarPosition);
 
     return () => {
-      window.removeEventListener('scroll', handleNavbarPosition);
+      window.removeEventListener("scroll", handleNavbarPosition);
     };
   }, []);
 
@@ -24,7 +24,7 @@ const Header = () => {
     <header
       id="navbar"
       className={`default-container ${
-        navbarPositionFixed ? 'navbar-fixed' : ''
+        navbarPositionFixed ? "navbar-fixed" : ""
       }`}
     >
       <div className="wrapper">
@@ -39,7 +39,7 @@ const Header = () => {
           <ul className="navbar-links">
             <li>
               <a
-                href="https://www.linkedin.com/in/vieira-lucas/"
+                href="https://www.linkedin.com/in/nguy%E1%BB%85n-minh-%C4%91%E1%BB%A9c-868007180/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Visit my LinkedIn Profile"

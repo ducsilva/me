@@ -1,11 +1,9 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps } from "next";
+import RepositoryResources from "../services/resources/repository";
+import UserResources from "../services/resources/user";
+import ProfileTemplate, { ProfileTemplateProps } from "../templates/Profile";
 
-import ProfileTemplate, { ProfileTemplateProps } from '../templates/Profile';
-
-import UserResources from '../services/resources/user';
-import RepositoryResources from '../services/resources/repository';
-
-const DEFAULT_USER_NAME = 'Lukazovic';
+const DEFAULT_USER_NAME = "DucSilva";
 
 const HomePage = ({ user, repositories }: ProfileTemplateProps) => (
   <ProfileTemplate user={user} repositories={repositories} />
