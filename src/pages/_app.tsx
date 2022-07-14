@@ -1,5 +1,5 @@
 import Head from "@Components/Head";
-import "@Styles/styles.css";
+import "@Styles/styles.scss";
 import { Router } from "next/router";
 import NProgress from "nprogress";
 
