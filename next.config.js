@@ -21,7 +21,7 @@ module.exports = {
       "avatars3.githubusercontent.com",
       "avatars4.githubusercontent.com",
       "avatars5.githubusercontent.com",
-      "blog-dev-duc.herokuapp.com",
+      "https://blog-dev-duc.herokuapp.com",
       "res.cloudinary.com",
     ],
   },
