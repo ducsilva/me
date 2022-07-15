@@ -13,6 +13,26 @@ export type UserData = {
   followersCount?: number;
   createdAt?: string;
   createdDistance?: string;
+  file?: FileData;
+};
+
+export type FileData = {
+  alternativeText?: string;
+  caption?: string;
+  createdAt?: string;
+  ext?: string;
+  formats?: any | null;
+  hash?: string;
+  height?: any | null;
+  mime?: string;
+  name?: string;
+  previewUrl?: any | null;
+  provider?: string;
+  provider_metadata?: any | null;
+  size?: number;
+  updatedAt?: string;
+  url?: string;
+  width: any | null;
 };
 
 const userMapper = (userData: UserApiData): UserData => ({
