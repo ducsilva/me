@@ -1,5 +1,7 @@
 import { UserData } from "@Services/tools/mappers";
+import _ from "lodash";
 import Image from "next/image";
+import AppDownload from "./AppDownLoad";
 
 type ProfileProps = Omit<UserData, "id" | "createdAt">;
 
@@ -12,6 +14,7 @@ const Profile = ({
   publicReposCount,
   profileUrl,
   createdDistance,
+  file,
 }: ProfileProps) => (
   <main id="profile">
     <div className="wrapper">
@@ -33,6 +36,13 @@ const Profile = ({
           <li>
             <p>Username: {userName}</p>
           </li>
+          {!_.isEmpty(file) && (
+            <li>
+              <p>
+                My CV: <AppDownload fileName={file?.name} url={file?.url} />
+              </p>
+            </li>
+          )}
           {publicReposCount && (
             <li>
               <p>Public Repositories: {publicReposCount}</p>

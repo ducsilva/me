@@ -14,7 +14,12 @@ const initialState: IState = {
 };
 
 export const fetchAboutDetail = createAsyncThunk("user", async (id: string) => {
-  const { data } = await strapiApi.get(`abouts/${id}?populate=avatar`);
+  let request = {
+    params: {
+      populate: ["avatar", "file"],
+    },
+  };
+  const { data } = await strapiApi.get(`abouts/${id}`, request);
   return data;
 });
 
