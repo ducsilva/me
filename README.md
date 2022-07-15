@@ -63,6 +63,6 @@ Then merge your pull request, you can now delete your branch
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/DucSilva"><img src="https://avatars0.githubusercontent.com/u/54550926?s=460&u=cdeeac652ce0597a986fbdcff6e249ad27a1f1da&v=4" width="100px;" alt=""/><br /><sub><b>Lucas Vieira</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/DucSilva"><img src="https://res.cloudinary.com/dxs1zdei2/image/upload/v1617510369/ava_qzyafz.jpg" width="100px;" alt=""/><br /><sub><b>Đức Nguyễn</b></sub></a><br /></td>
   <tr>
 </table>
