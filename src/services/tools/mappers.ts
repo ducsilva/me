@@ -3,16 +3,16 @@ import { UserApiData } from "@Services/resources/user";
 import DateTools from "@Services/tools/date";
 
 export type UserData = {
-  id: string;
-  userName: string;
-  name: string;
-  description: string;
-  avatarUrl: string;
-  profileUrl: string;
-  publicReposCount: number;
-  followersCount: number;
-  createdAt: string;
-  createdDistance: string;
+  id?: string;
+  userName?: string;
+  name?: string;
+  description?: string;
+  avatarUrl?: string;
+  profileUrl?: string;
+  publicReposCount?: number;
+  followersCount?: number;
+  createdAt?: string;
+  createdDistance?: string;
 };
 
 const userMapper = (userData: UserApiData): UserData => ({
@@ -39,6 +39,13 @@ export type RepositoryData = {
   forksCount: number;
   updatedAt: string;
   updatedDistance: string;
+};
+
+export type SkillDataType = {
+  id?: string;
+  name?: string;
+  star?: string;
+  image?: string;
 };
 
 const repositoriesMapper = (

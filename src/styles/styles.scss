@@ -5,3 +5,8 @@
 @import "./Repositories.module.scss";
 @import "./Footer.module.scss";
 @import "./Search.module.scss";
+
+//import tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

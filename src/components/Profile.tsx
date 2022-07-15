@@ -18,12 +18,12 @@ const Profile = ({
       <div className="profile-container default-container ">
         <div className="profile-image-container">
           <Image
-            src={avatarUrl}
+            src={avatarUrl || "/assets/avatar/ava.jpeg"}
             alt={name}
             width={300}
             height={300}
             placeholder="blur"
-            blurDataURL={avatarUrl}
+            blurDataURL={avatarUrl || "/assets/avatar/ava.jpeg"}
           />
         </div>
         <h1>{name}</h1>
@@ -33,25 +33,32 @@ const Profile = ({
           <li>
             <p>Username: {userName}</p>
           </li>
-          <li>
-            <p>Public Repositories: {publicReposCount}</p>
-          </li>
-          <li>
-            <p>Folowers: {followersCount}</p>
-          </li>
-          <li>
-            <p>Created {createdDistance}</p>
-          </li>
+          {publicReposCount && (
+            <li>
+              <p>Public Repositories: {publicReposCount}</p>
+            </li>
+          )}
+          {followersCount && (
+            <li>
+              <p>Folowers: {followersCount}</p>
+            </li>
+          )}
+          {createdDistance && (
+            <li>
+              <p>Created {createdDistance}</p>
+            </li>
+          )}
         </ul>
-
-        <a
-          href={profileUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={`${userName} Github Profile`}
-        >
-          See more on Github
-        </a>
+        {profileUrl && (
+          <a
+            href={profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`${userName} Github Profile`}
+          >
+            See more on Github
+          </a>
+        )}
       </div>
     </div>
   </main>

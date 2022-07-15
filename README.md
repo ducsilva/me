@@ -18,6 +18,12 @@
 - [React](https://reactjs.org)
 - [Axios](https://github.com/axios/axios)
 - [Github API](https://api.github.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
+- [Heroku](https://dashboard.heroku.com/apps)
+- [Redux-toolkit](https://redux-toolkit.js.org/)
+- [More-library]
+- [Scss]
 
 ## :page_facing_up: About
 
@@ -33,7 +39,7 @@ Read more about SSG in: [What is a Static Site Generator? And 3 ways to find the
 
 #### Online
 
-You can use the App in this site: https://github-profiles-next-app.vercel.app/
+You can use the App in this site: https://me-one-mu.vercel.app/
 
 #### Locally
 
