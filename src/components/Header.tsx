@@ -1,4 +1,5 @@
 import DarkModeToggle from "@Components/DarkModeToggle";
+import { ImageRoundedStyled } from "@Components/global.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useDarkMode from "use-dark-mode";
@@ -34,8 +35,13 @@ const Header = () => {
       <div className="wrapper">
         <Link href="/">
           <a className="navbar-logo" title="Home page">
-            <img src="/logo.svg" alt="Logo" />
-            <h1 className="navbar-logo-title">Github Profiles</h1>
+            <ImageRoundedStyled
+              src={"/assets/avatar/ava.jpeg"}
+              width={40}
+              height={40}
+            />
+
+            <h1 className="navbar-logo-title">Đức Nguyễn Minh</h1>
           </a>
         </Link>
 

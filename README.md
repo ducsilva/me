@@ -18,7 +18,6 @@
 - [React](https://reactjs.org)
 - [Axios](https://github.com/axios/axios)
 - [Github API](https://api.github.com/)
-- [Tailwind](https://tailwindcss.com/)
 - [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
 - [Heroku](https://dashboard.heroku.com/apps)
 - [Redux-toolkit](https://redux-toolkit.js.org/)
