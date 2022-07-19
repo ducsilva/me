@@ -1,7 +1,7 @@
-import FileSaver from "file-saver";
+import Link from "next/link";
 import styled from "styled-components";
 
-const FileStyled = styled.div`
+const FileStyled = styled(Link)`
   cursor: pointer;
   &:hover {
     color: blue;
@@ -14,10 +14,13 @@ type AppDownloadProps = {
 };
 
 const AppDownload = ({ fileName, url }: AppDownloadProps) => {
-  const saveFile = () => {
-    FileSaver.saveAs(process.env.NEXT_PUBLIC_URL_MEDIA + url, fileName);
-  };
-  return <FileStyled onClick={() => saveFile()}>{fileName}</FileStyled>;
+  return (
+    <FileStyled href={url} passHref>
+      <a target="_blank" rel="noopener noreferrer">
+        {fileName}
+      </a>
+    </FileStyled>
+  );
 };
 
 export default AppDownload;

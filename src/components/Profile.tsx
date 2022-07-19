@@ -36,10 +36,16 @@ const Profile = ({
           <li>
             <p>Username: {userName}</p>
           </li>
+        </ul>
+        <ul className="profile-info-card">
           {!_.isEmpty(file) && (
             <li>
               <p>
-                My CV: <AppDownload fileName={file?.name} url={file?.url} />
+                My CV:{" "}
+                <AppDownload
+                  fileName={"CV_NGUYEN_MINH_DUC_ENGLISH.pdf"}
+                  url={file}
+                />
               </p>
             </li>
           )}
