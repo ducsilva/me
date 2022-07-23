@@ -17,7 +17,7 @@
   height: 300px;
 }
 
-#profile .profile-image-container > div {
+#profile .profile-image-container>div {
   border-radius: 50%;
   border: 5px solid var(--color-primary);
   height: 300px;
@@ -47,6 +47,12 @@
   margin-top: 1em;
   display: flex;
   flex-direction: column;
+}
+
+#profile .profile-container .profile-info-cv {
+  width: 100%;
+  list-style: none;
+  margin-top: 1em;
 }
 
 #profile .profile-container .profile-info-card p {

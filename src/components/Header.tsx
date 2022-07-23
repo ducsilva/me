@@ -62,7 +62,7 @@ const Header = () => {
             </li>
             <li>
               <Link href="/search">
-                <a title="Create your own Profile">Create Profile</a>
+                <a title="Create your own Profile">Search Profile Github</a>
               </Link>
             </li>
             <li>

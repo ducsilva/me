@@ -32,21 +32,14 @@ const Profile = ({
         <h1>{name}</h1>
         <h4>{description}</h4>
 
-        <ul className="profile-info-card">
-          <li>
-            <p>Username: {userName}</p>
-          </li>
-        </ul>
-        <ul className="profile-info-card">
+        <ul className="profile-info-cv">
           {!_.isEmpty(file) && (
             <li>
-              <p>
-                My CV:{" "}
-                <AppDownload
-                  fileName={"CV_NGUYEN_MINH_DUC_ENGLISH.pdf"}
-                  url={file}
-                />
-              </p>
+              <span>My CV: </span>
+              <AppDownload
+                fileName={"CV_NGUYEN_MINH_DUC_ENGLISH.pdf"}
+                url={file}
+              />
             </li>
           )}
           {publicReposCount && (
