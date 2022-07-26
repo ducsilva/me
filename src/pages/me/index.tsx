@@ -8,8 +8,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const AboutMe = () => {
-  const { user } = useSelector((state: RootState) => state?.user);
   const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state?.user);
+
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchAboutDetail("1"));

@@ -2,11 +2,8 @@ import DarkModeToggle from "@Components/DarkModeToggle";
 import { ImageRoundedStyled } from "@Components/global.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import useDarkMode from "use-dark-mode";
 
 const Header = () => {
-  const darkMode = useDarkMode();
-
   const [navbarPositionFixed, setNavbarPositionFixed] = useState(false);
 
   const handleNavbarPosition = () => {
