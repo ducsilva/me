@@ -15,7 +15,7 @@ const UserProfilePage = ({ user, repositories }: ProfileTemplateProps) => {
 
   return (
     <>
-      <Head title={`${user.name} - Profile`} description={user.description} />
+      <Head />
 
       <ProfileTemplate user={user} repositories={repositories} />
     </>
