@@ -13,7 +13,6 @@ export type UserData = {
   followersCount?: number;
   createdAt?: string;
   createdDistance?: string;
-  file?: string;
 };
 
 export type FileData = {

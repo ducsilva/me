@@ -6,7 +6,6 @@ const About = ({ user }) => (
     userName={user?.attributes?.Me}
     description={user?.attributes?.Description}
     avatarUrl={user?.attributes?.ava}
-    file={user?.attributes?.cv}
   />
 );
 

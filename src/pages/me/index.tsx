@@ -1,6 +1,7 @@
+// @ts-nocheck
 import About from "@Components/AboutMe";
 import Footer from "@Components/Footer";
-import Skill from "@Components/Skill";
+import PDFPreview from "@Components/PDFPreview";
 import { RootState } from "@States/store";
 import { fetchAboutDetail } from "@States/user/userSlice";
 import BaseTemplate from "@Templates/Base";
@@ -12,14 +13,13 @@ const AboutMe = () => {
   const { user } = useSelector((state: RootState) => state?.user);
 
   useEffect(() => {
-    //@ts-ignore
     dispatch(fetchAboutDetail("1"));
   }, []);
 
   return (
     <BaseTemplate>
       <About user={user} />
-      <Skill skills={user?.attributes?.skills || []} />
+      <PDFPreview document={user?.attributes?.cv} />
       <Footer />
     </BaseTemplate>
   );
