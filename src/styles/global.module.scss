@@ -50,6 +50,8 @@ a {
   color: var(--color-primary);
   text-decoration: none;
   transition: opacity 0.25s ease-in-out;
+  text-transform: none !important;
+  text-decoration: none !important;
 }
 
 a:hover {
