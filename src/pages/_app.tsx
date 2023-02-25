@@ -22,7 +22,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head />
-
       <Component {...pageProps} />
     </Provider>
   );

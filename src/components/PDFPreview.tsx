@@ -15,7 +15,7 @@ const PdfPreview = ({ document }: any) => {
   return (
     <div className="container text-center pt-4">
       {url && (
-        <iframe src={url} width="500" height="600" allow="autoplay"></iframe>
+        <iframe src={url} width="800" height="1000" allow="autoplay"></iframe>
       )}
     </div>
   );
